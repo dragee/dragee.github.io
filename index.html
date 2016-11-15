@@ -43,10 +43,9 @@
 			<div class="nav-collapse">
 				<ul class="nav">
 					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="contacts.html">Contact</a></li>
+					<li><a href="contacts.html">Contacts</a></li>
 				</ul>
-				<a href="#" class="btn"> Download Dragee <small>(v0.0.1)</small></a>
-				<a href="#" class="btn btn-primary" >View project on GitHub</a>
+				<a href="https://github.com/jaromudr/dragee" class="btn btn-primary" >View project on GitHub</a>
 			</div>
 		</div>
 	</div>
@@ -909,7 +908,9 @@ fillStyle: "rgba(150,255,50,0.8)"
 						var spider,
 							root = document.getElementById("DemoSpider"),
 							areaElement = root.getElementsByClassName("spider")[0],
-							draggableElements = [].splice.call(areaElement.getElementsByTagName("li"), 0);
+							draggableElements = [];
+
+						[].push.apply(draggableElements, areaElement.getElementsByTagName("li"))
 
 						spider = new Dragee.Spider(areaElement, draggableElements, {
 							startRadius: 100,
@@ -1049,7 +1050,7 @@ fillStyle: "rgba(150,255,50,0.8)"
 	<footer class="footer">
 		<p class="pull-right"><a href="#">Back to top</a></p>
 		<p>
-			Designed by Vitaliy Yarovuy (vitaliy.yarovuy@qa-power.com)
+			Designed by Vitaliy Yarovuy
 		</p>
     </footer>
 </div>
