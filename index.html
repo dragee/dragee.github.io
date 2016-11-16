@@ -84,32 +84,33 @@
 				</p>
 				<h3>Options</h3>
 				<p>
-					<code>parent</code> HTMLElement який визначає декартову систему координат для <code>Dragee.Draggable</code>, його верхній лівий кут буде визначений як точка <code>new Point (0,0)</code>.<br/><br/>
+					<code>parent</code> - HTMLElement, що визначає декартову систему координат, в якій буде переміщатися <code>Dragee.Draggable</code>. Його верхній лівий кут приймається за початок координат.<br/><br/>
 
-					<code>bound</code> дозволяє задати функцію, що описує граничні обмеження для переміщення елементу. В модулі <code>bound.js</code> ви можете знайти декілька корисних функцій для побудови граничних обмежень.<br/><br/>
+					За замовчуванням береться перший не статичний батьківський HTMLElement.<br/><br/>
 
-					<code>position</code> - координата за замовчуванням. Якщо <code>position</code> не задана, координата вираховується автоматично згідно з розміщенням в батьківсьмому контейнері.<br/><br/>
+					<code>bound</code> дозволяє задати функцію, що описує граничні обмеження для переміщення елементу.<br/><br/>
 
-					<code>isContentBoxSize</code> - визначає чи повинні ми враховувати padding при визначенні розміру блоку.
+					Модуль <code>bound.js</code> описує декілька частовживаних функцій.<br/><br/>
 
-					Callbacks: <code>onEnd</code>, <code>onMove</code>
+					<code>position</code> - координата за замовчуванням. Якщо <code>position</code> не задана, координата вираховується автоматично згідно з розміщенням в батьківсьмому контейнері.<br/>
+
+					<h3>Callbacks:</h3>
+					<code>onStart</code>, <code>onMove</code>, <code>onEnd</code>
 					<br/><br/>
 				</p>
 			</div>
 			<div class="span6">
-				<h5>Значення по замовчуванню:</h5>
+				<h3>Значення по замовчуванню:</h3>
 				<pre class="prettyprint linenums">
 parent: parent = Dragee.util.getDafaultParent(element),
-bound: function(){ return Dragee.boundFactory(Dragee.boundType.element)(parent, parent); },
-onEnd: function(){},
-onMove: function(){}
+bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent),
 				</pre>
 				<h3>Methods</h3>
 				<p>
 					<code>getSize()</code><br/>
 					<code>getCenter()</code><br/>
 					<code>getRectangle()</code><br/>
-					<code>move(point, time, isFix, isSilent)</code> - переміщує елемент в точку <code>point</code> за час <code>time</code>.<br/>
+					<code>move(point, time, isFix, isSilent)</code><br/>
 					<code>setPosition(point)</code>
 				</p>
 				<h3>Properties</h3>
@@ -194,20 +195,14 @@ onMove: function(){}
 
 				</style>
 				<script>
-					window.addEventListener("load", function(){
-						var draggableA, draggableB, draggableC, draggableD,
-							root = document.getElementById("DemoDraggable"),
-							draggableAElement = root.getElementsByClassName("draggable-a")[0],
-							draggableBElement = root.getElementsByClassName("draggable-b")[0],
-							draggableCElement = root.getElementsByClassName("draggable-c")[0],
-							draggableDElement = root.getElementsByClassName("draggable-d")[0];
+          window.addEventListener("load", function(){
+            var root = document.getElementById("DemoDraggable");
 
-						draggableA = new Dragee.Draggable(draggableAElement);
-						draggableB = new Dragee.Draggable(draggableBElement);
-						draggableC = new Dragee.Draggable(draggableCElement);
-						draggableD = new Dragee.Draggable(draggableDElement);
-					});
-				</script>
+            root.querySelectorAll(".draggable").forEach(function(draggableElement){
+              new Dragee.Draggable(draggableElement)
+            })
+          });
+        </script>
 			</div>
 			<div class="span6 code-span"></div>
 		</div>
