@@ -84,7 +84,7 @@
         </p>
         <h3>Options</h3>
         <p>
-          <code>parent</code> - HTMLElement that define Cartesian coordinates system for <code>Dragee.Draggable</code>. It's upper left corner is taken as the origin.<br/><br/>
+          <code>parent</code> - HTMLElement that define Cartesian coordinates system. It's upper left corner is taken as the origin.<br/><br/>
 
           By default we take first not static parent HTMLElement.<br/><br/>
 
@@ -102,8 +102,8 @@
       <div class="span6">
         <h3>Defaults:</h3>
         <pre class="prettyprint linenums">
-parent: parent = Dragee.util.getDafaultParent(element),
-bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent),
+          parent: parent = Dragee.util.getDafaultParent(element),
+          bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent)
         </pre>
         <h3>Methods</h3>
         <p>
@@ -240,11 +240,11 @@ bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent),
       <div class="span6">
         <h3>Defaults:</h3>
         <pre class="prettyprint linenums">
-timeEnd: 200,
-timeExcange: 400,
-parent: parent,
-sorting: Dragee.sortingFactory(Dragee.positionType.floatLeft)(80, mathPoint.getLength({x: 1, y:4, IsTransformationSpace:true})),
-positioning: Dragee.positionFactory(Dragee.positionType.floatLeft)(Dragee.util.bind(this.getRectangle,this), {isRemove: true})
+          timeEnd: 200,
+          timeExcange: 400,
+          parent: parent,
+          sorting: Dragee.sortingFactory(Dragee.positionType.floatLeft)(80, mathPoint.getLength({x: 1, y:4, IsTransformationSpace:true})),
+          positioning: Dragee.positionFactory(Dragee.positionType.floatLeft)(Dragee.util.bind(this.getRectangle,this), {isRemove: true})
         </pre>
         <h3>Methods:</h3>
         <p>
@@ -273,7 +273,7 @@ positioning: Dragee.positionFactory(Dragee.positionType.floatLeft)(Dragee.util.b
         </p>
         <h5>Defaults:</h5>
         <pre class="prettyprint linenums">
-timeEnd: 400,
+          timeEnd: 400
         </pre>
       </div>
       <div class="span6">
