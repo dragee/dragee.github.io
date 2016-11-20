@@ -102,7 +102,7 @@
 			<div class="span6">
 				<h3>Defaults:</h3>
 				<pre class="prettyprint linenums">
-					parent: parent = Dragee.util.getDafaultParent(element),
+					parent: Dragee.util.getDafaultParent(element),
 					bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent)
 				</pre>
 				<h3>Methods:</h3>
@@ -193,14 +193,14 @@
 					}
 				</style>
 				<script>
-          window.addEventListener("load", function(){
-            var root = document.getElementById("DemoDraggable");
+					window.addEventListener("load", function(){
+						var root = document.getElementById("DemoDraggable");
 
-            root.querySelectorAll(".draggable").forEach(function(draggableElement){
-              new Dragee.Draggable(draggableElement)
-            })
-          });
-        </script>
+						root.querySelectorAll(".draggable").forEach(function(draggableElement){
+							new Dragee.Draggable(draggableElement)
+						})
+					});
+				</script>
 			</div>
 			<div class="span6 code-span"></div>
 		</div>
@@ -221,11 +221,11 @@
 					<code>timeExcange</code> - час за який <code>Dragee.Draggables</code> обмінюються своїми позиціями.<br/>
 					<code>parent</code> - HTMLElement, який визначає декартову систему координат<br/>
 					<code>sorting</code> - функція що визначає, яким чином будуть впорядковуватися <code>Dragee.Draggables</code> всередині <code>Dragee.Target</code>.<br/>
-					<code>positioning</code> - функція що визначає, яким чином будуть розміщуватись <code>Dragee.Draggables</code> всередині <code>Dragee.Target</code>.<br/>					
+					<code>positioning</code> - функція що визначає, яким чином будуть розміщуватись <code>Dragee.Draggables</code> всередині <code>Dragee.Target</code>.<br/>                   
 				</p>
 				<h3>Callbacks:</h3>
 				<p>
-					<code>onAdd</code>,	<code>onRemove</code>
+					<code>onAdd</code>, <code>onRemove</code>
 				</p>
 			</div>
 			<div class="span6">
@@ -1033,7 +1033,7 @@
 		<p>
 			Designed by Vitaliy Yarovuy
 		</p>
-    </footer>
+	</footer>
 </div>
 
 <script id="codeViewTemplate" type="text/template">
