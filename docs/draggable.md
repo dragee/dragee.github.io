@@ -20,8 +20,6 @@ Module `bound.js` describe few often used functions.
 
 `onStart`, `onMove`, `onEnd`  
 
-<div class="span6">
-
 ### Defaults:
 
 ```javascript
