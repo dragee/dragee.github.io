@@ -43,6 +43,28 @@ section {
 	padding-top: 80px;
 }
 
+.md-docs {
+	margin-bottom: 20px;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+
+	-webkit-column-gap: 30px;
+	-moz-column-gap: 30px;
+	column-gap: 30px;
+}
+
+@media (max-width: 767px) {
+	.md-docs {
+		margin-bottom: 10px;
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
+}
+
+
+
 /* Faded out hr */
 hr.soften {
 	height: 1px;

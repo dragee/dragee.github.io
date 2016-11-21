@@ -14,11 +14,6 @@
 	<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="bootstrap/js/google-code-prettify/prettify.css" rel="stylesheet">
 
-	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
 	<!-- Le fav and touch icons -->
 	<link rel="shortcut icon" href="assets/ico/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
@@ -52,6 +47,7 @@
 </div>
 
 <div class="container">
+
 	<header class="jumbotron subhead" id="overview">
 		<h1>Dragee</h1>
 		<p class="lead">Dragee - drag&drop framework for desktop and mobile apps</p>
@@ -69,7 +65,6 @@
 		</div>
 	</header>
 
-
 	<section id="Draggable">
 		<div class="page-header">
 			<h1>
@@ -81,17 +76,17 @@
 				<p>
 					<code>Dragee.Draggable(element[, options])</code>
 				</p>
-				<h3>Options</h3>
+				<h3>Options:</h3>
 				<p>
-					<code>parent</code> - HTMLElement that define Cartesian coordinates system. It's upper left corner is taken as the origin.<br/><br/>
+					<code>parent</code> - HTMLElement, що визначає декартову систему координат. Його верхній лівий кут приймається за початок координат.<br/><br/>
 
-					By default we take first not static parent HTMLElement.<br/><br/>
+					За замовчуванням береться перший не статичний батьківський HTMLElement.<br/><br/>
 
-					<code>bound</code> allow you to set function that will limit <code>Dragee.Draggable</code> movements.<br/><br/>
+					<code>bound</code> дозволяє задати функцію, що описує граничні обмеження для переміщення елементу.<br/><br/>
 
-					Module <code>bound.js</code> describe few often used functions.<br/><br/>
+					Модуль <code>bound.js</code> описує декілька частовживаних функцій.<br/><br/>
 
-					<code>position</code> - default coordinate. If it is not set we automatically calculate position inside parent.<br/>
+					<code>position</code> - координата за замовчуванням. Якщо <code>position</code> не задана, координата вираховується автоматично згідно з розміщенням в батьківсьмому контейнері.<br/>
 
 					<h3>Callbacks:</h3>
 					<code>onStart</code>, <code>onMove</code>, <code>onEnd</code>
@@ -104,7 +99,7 @@
 					parent: Dragee.util.getDafaultParent(element),
 					bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent)
 				</pre>
-				<h3>Methods</h3>
+				<h3>Methods:</h3>
 				<p>
 					<code>getSize()</code><br/>
 					<code>getCenter()</code><br/>
@@ -112,7 +107,7 @@
 					<code>move(point, time, isFix, isSilent)</code><br/>
 					<code>setPosition(point)</code>
 				</p>
-				<h3>Properties</h3>
+				<h3>Properties:</h3>
 				<p>
 					<code>enable = [true|false]</code><br/>
 				</p>
@@ -146,11 +141,11 @@
 				</p>
 				<h3>Options:</h3>
 				<p>
-					<code>timeEnd</code> - time to move <code>Dragee.Draggable</code> to endpoint.<br/>
-					<code>timeExcange</code> - time to exchange <code>Dragee.Draggables</code>.<br/>
-					<code>parent</code> - HTMLElement that define Cartesian coordinates system.<br/>
-					<code>sorting</code> - function that define how will be <code>Dragee.Draggables</code> sorted inside <code>Dragee.Target</code>.<br/>
-					<code>positioning</code> - function that define how will <code>Dragee.Draggables</code> placed inside <code>Dragee.Target</code> after user will drop it.<br/>
+					<code>timeEnd</code> - час переміщення <code>Dragee.Draggable</code> в цільову точку.<br/>
+					<code>timeExcange</code> - час за який <code>Dragee.Draggables</code> обмінюються своїми позиціями.<br/>
+					<code>parent</code> - HTMLElement, який визначає декартову систему координат<br/>
+					<code>sorting</code> - функція що визначає, яким чином будуть впорядковуватися <code>Dragee.Draggables</code> всередині <code>Dragee.Target</code>.<br/>
+					<code>positioning</code> - функція що визначає, яким чином будуть розміщуватись <code>Dragee.Draggables</code> всередині <code>Dragee.Target</code>.<br/>
 				</p>
 				<h3>Callbacks:</h3>
 				<p>
@@ -169,12 +164,11 @@
 				<h3>Methods:</h3>
 				<p>
 					<code>getSortedDraggables()</code><br/>
-					<code>reset()</code> - all <code>Dragee.Draggables</code> inside <code>Dragee.Target</code> thrown out and are moving to initial positions.<br/>
+					<code>reset()</code> - всі елементи, що знаходяться в <code>Dragee.Target</code>, повертаються у вихідні положення<br/>
 				</p>
 			</div>
 		</div>
 		<h2>Demo:</h2>
-
 		<div class="row demo-row">
 			<div class="span6 demo-span">
 				<div id="DemoTargetA" class="demo-html">
@@ -572,10 +566,10 @@
 				</p>
 				<h3>Defaults:</h3>
 				<pre class="prettyprint linenums">
-timeEnd: 200,
-timeExcange: 400,
-radius: 30,
-getLength: mathPoint.getLength()
+					timeEnd: 200,
+					timeExcange: 400,
+					radius: 30,
+					getLength: mathPoint.getLength()
 				</pre>
 			</div>
 			<div class="span6">
@@ -712,14 +706,14 @@ getLength: mathPoint.getLength()
 			<div class="span6">
 				<h5>Defaults:</h5>
 				<pre class="prettyprint linenums">
-angle: 0,
-dAngle: 2 * Math.PI / elements.length,
-center: areaRectangle.getCenter(),
-startRadius: 50,
-endRadius: mathPoint.createRectangleFromElement(area, area).getMinSide() / 2,
-lineWidth: 2,
-strokeStyle: "#ff5577",
-fillStyle: "rgba(150,255,50,0.8)"
+					angle: 0,
+					dAngle: 2 * Math.PI / elements.length,
+					center: areaRectangle.getCenter(),
+					startRadius: 50,
+					endRadius: mathPoint.createRectangleFromElement(area, area).getMinSide() / 2,
+					lineWidth: 2,
+					strokeStyle: "#ff5577",
+					fillStyle: "rgba(150,255,50,0.8)"
 				</pre>
 			</div>
 		</div>
@@ -727,15 +721,15 @@ fillStyle: "rgba(150,255,50,0.8)"
 		<div class="row demo-row">
 			<div class="span6 demo-span">
 				<div id="DemoSpider" class="demo-html">
-						<ul class="spider">
-							<li>A</li>
-							<li>B</li>
-							<li>C</li>
-							<li>D</li>
-							<li>E</li>
-							<li>F</li>
-							<li>H</li>
-						</ul>
+					<ul class="spider">
+						<li>A</li>
+						<li>B</li>
+						<li>C</li>
+						<li>D</li>
+						<li>E</li>
+						<li>F</li>
+						<li>H</li>
+					</ul>
 				</div>
 				<style>
 					#DemoSpider{
@@ -926,7 +920,7 @@ fillStyle: "rgba(150,255,50,0.8)"
 		<p>
 			Designed by Vitaliy Yarovuy
 		</p>
-		</footer>
+	</footer>
 </div>
 
 <script id="codeViewTemplate" type="text/template">

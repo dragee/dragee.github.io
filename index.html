@@ -14,11 +14,6 @@
 	<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="bootstrap/js/google-code-prettify/prettify.css" rel="stylesheet">
 
-	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
 	<!-- Le fav and touch icons -->
 	<link rel="shortcut icon" href="assets/ico/favicon.ico">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
@@ -52,7 +47,6 @@
 </div>
 
 <div class="container">
-
 	<header class="jumbotron subhead" id="overview">
 		<h1>Dragee</h1>
 		<p class="lead">Dragee - drag&drop framework for desktop and mobile apps</p>
@@ -70,55 +64,9 @@
 		</div>
 	</header>
 
-	<section id="Draggable">
-		<div class="page-header">
-			<h1>
-				Dragee.Draggable
-			</h1>
-		</div>
-		<div class="row">
-			<div class="span6">
-				<p>
-					<code>Dragee.Draggable(element[, options])</code>
-				</p>
-				<h3>Options:</h3>
-				<p>
-					<code>parent</code> - HTMLElement, що визначає декартову систему координат. Його верхній лівий кут приймається за початок координат.<br/><br/>
 
-					За замовчуванням береться перший не статичний батьківський HTMLElement.<br/><br/>
-
-					<code>bound</code> дозволяє задати функцію, що описує граничні обмеження для переміщення елементу.<br/><br/>
-
-					Модуль <code>bound.js</code> описує декілька частовживаних функцій.<br/><br/>
-
-					<code>position</code> - координата за замовчуванням. Якщо <code>position</code> не задана, координата вираховується автоматично згідно з розміщенням в батьківсьмому контейнері.<br/>
-
-					<h3>Callbacks:</h3>
-					<code>onStart</code>, <code>onMove</code>, <code>onEnd</code>
-					<br/><br/>
-				</p>
-			</div>
-			<div class="span6">
-				<h3>Defaults:</h3>
-				<pre class="prettyprint linenums">
-					parent: Dragee.util.getDafaultParent(element),
-					bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent)
-				</pre>
-				<h3>Methods:</h3>
-				<p>
-					<code>getSize()</code><br/>
-					<code>getCenter()</code><br/>
-					<code>getRectangle()</code><br/>
-					<code>move(point, time, isFix, isSilent)</code><br/>
-					<code>setPosition(point)</code>
-				</p>
-				<h3>Properties:</h3>
-				<p>
-					<code>enable = [true|false]</code><br/>
-				</p>
-			</div>
-		</div>
-		<h2>Demo</h2>
+	<section id="Draggable" >
+		<div class="md-docs" data-md="https://dragee.github.io/docs/draggable.md"></div>
 		<div class="row">
 			<div class="span6">
 				<iframe
@@ -136,418 +84,35 @@
 	</section>
 
 	<section id="Target">
-		<div class="page-header">
-			<h1>Dragee.Target</h1>
-		</div>
+		<div class="md-docs" data-md="https://dragee.github.io/docs/target.md"></div>
 		<div class="row">
 			<div class="span6">
-				<p>
-					<code>Target(element, draggables[, options])</code><br/>
-				</p>
-				<h3>Options:</h3>
-				<p>
-					<code>timeEnd</code> - час переміщення <code>Dragee.Draggable</code> в цільову точку.<br/>
-					<code>timeExcange</code> - час за який <code>Dragee.Draggables</code> обмінюються своїми позиціями.<br/>
-					<code>parent</code> - HTMLElement, який визначає декартову систему координат<br/>
-					<code>sorting</code> - функція що визначає, яким чином будуть впорядковуватися <code>Dragee.Draggables</code> всередині <code>Dragee.Target</code>.<br/>
-					<code>positioning</code> - функція що визначає, яким чином будуть розміщуватись <code>Dragee.Draggables</code> всередині <code>Dragee.Target</code>.<br/>
-				</p>
-				<h3>Callbacks:</h3>
-				<p>
-					<code>onAdd</code>, <code>onRemove</code>
-				</p>
+				<iframe
+					style="width: 100%; height: 400px; border: 1px solid #eee;"
+					src="//jsfiddle.net/jaromudr/rou0psuh/embedded/result/">
+				</iframe>
 			</div>
 			<div class="span6">
-				<h3>Defaults:</h3>
-				<pre class="prettyprint linenums">
-					timeEnd: 200,
-					timeExcange: 400,
-					parent: Dragee.util.getDefaultParent(element),
-					sorting: Dragee.sortingFactory(Dragee.positionType.floatLeft)(80, mathPoint.getLength({x: 1, y:4, IsTransformationSpace:true})),
-					positioning: Dragee.positionFactory(Dragee.positionType.floatLeft)(Dragee.util.bind(this.getRectangle, this), {isRemove: true})
-				</pre>
-				<h3>Methods:</h3>
-				<p>
-					<code>getSortedDraggables()</code><br/>
-					<code>reset()</code> - всі елементи, що знаходяться в <code>Dragee.Target</code>, повертаються у вихідні положення<br/>
-				</p>
+				<iframe
+					style="width: 100%; height: 400px; border: 1px solid #eee;"
+					src="//jsfiddle.net/jaromudr/rou0psuh/embedded/html,js,css/">
+				</iframe>
 			</div>
 		</div>
-		<h2>Demo:</h2>
-		<div class="row demo-row">
-			<div class="span6 demo-span">
-				<div id="DemoTargetA" class="demo-html">
-					<div class="area area-a">
-						<div class="target target-a">
-							dropzone A
-						</div>
-						<div class="target target-b">
-							dropzone B
-						</div>
-						<div class="target target-c">
-							dropzone C
-						</div>
-						<ul class="draggable-holder">
-							<li class="draggable draggable-a">
-								<i class=" icon-move"></i>
-								A<small>(origin)</small>
-							</li>
-							<li class="draggable draggable-b">
-								<i class=" icon-move"></i>
-								B<small>(clone)</small>
-							</li>
-							<li class="draggable draggable-b">
-								<i class=" icon-move"></i>
-								B<small>(clone)</small>
-							</li>
-							<li class="draggable draggable-b">
-								<i class=" icon-move"></i>
-								B<small>(clone)</small>
-							</li>
-							<li class="draggable draggable-b">
-								<i class=" icon-move"></i>
-								B<small>(clone)</small>
-							</li>
-							<li class="draggable draggable-c">
-								<i class=" icon-move"></i>
-								C<small>(origin)</small>
-							</li>
-							<li class="draggable draggable-d">
-								<i class=" icon-move"></i>
-								D<small>(origin)</small>
-							</li>
-							<li class="draggable draggable-e">
-								<i class=" icon-move"></i>
-								E<small>(origin)</small>
-							</li>
-							<li class="draggable draggable-e">
-								<i class=" icon-move"></i>
-								F<small>(origin)</small>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<style>
-					#DemoTargetB{
-						padding: 2%;
-						border: 1px dashed #333;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-						overflow: hidden;
-					}
 
-					#DemoTargetB small{
-						color: #999999;
-						font-size: 11px;
-						line-height: 11px;
-					}
-
-					#DemoTargetA .area{
-						position: relative;
-						padding: 3%;
-						margin: 2%;
-						width: 88%;
-						border: 1px dashed #333;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-						float: left;
-					}
-
-					#DemoTargetA .area .target{
-						width: 26%;
-						margin: 1%;
-						padding: 2%;
-						padding-top: 20px;
-						padding-bottom: 20px;
-
-						float: left;
-						border: 1px dashed #333;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-					}
-
-
-					#DemoTargetA ul.draggable-holder{
-						list-style: none;
-						clear: both;
-						margin: 4%;
-						border: 1px dashed #333;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-						float: left;
-					}
-
-					#DemoTargetA ul.draggable-holder .draggable{
-						width: 24%;
-						margin: 1% 4%;
-						padding: 9px 0;
-						font-size: 15px;
-						color: #333;
-						cursor: move;
-						text-align: center;
-						border: 1px solid #333;
-						border-radius: 5px;
-						background: #f5f5f5;
-						position: relative;
-						float: left;
-					}
-
-					#DemoTargetA ul.draggable-holder .draggable.active{
-						z-index: 2;
-						background: #ffc40d;
-					}
-
-					#DemoTargetA .area .target.target-b{
-						padding-top: 40px;
-						padding-bottom: 40px;
-					}
-
-					#DemoTargetA .area .target.target-c{
-						padding-top: 60px;
-						padding-bottom: 60px;
-					}
-
-					#DemoTargetA ul.draggable-holder .draggable.draggable-b + .draggable-b{
-						margin-left: -28%;
-					}
-
-					#DemoTargetA ul.draggable-holder .draggable.draggable-c{
-						margin-left: 3%;
-					}
-
-					#DemoTargetA ul.draggable-holder .draggable.green{
-						background: #62c462;
-					}
-
-					#DemoTargetA ul.draggable-holder .draggable.red{
-						background: #ee5f5b;
-					}
-
-					#DemoTargetA ul.draggable-holder .draggable.blue{
-						background: #049cdb;
-					}
-				</style>
-				<script>
-					window.addEventListener("load",function(){
-						var targetManger, draggables, targets,
-							root = document.getElementById("DemoTargetA"),
-							targetAreaElement = root.getElementsByClassName("area-a")[0],
-							targetElements = targetAreaElement.getElementsByClassName("target"),
-							draggableElements = targetAreaElement.getElementsByClassName("draggable"),
-							classForTargets=["green", "red", "blue"];
-
-						draggables = Array.prototype.slice.call(draggableElements).map(
-							function(element, i){
-								return new Dragee.Draggable(element, {
-									parent: targetAreaElement
-								});
-							}
-						);
-
-						targets = Array.prototype.slice.call(targetElements).map(
-							function(element, i){
-								return new Dragee.Target(element, draggables,{
-									parent:targetAreaElement,
-									onAdd:function(draggable){
-										draggable.element.addClass(classForTargets[i]);
-									},
-									onRemove:function(draggable){
-										draggable.element.removeClass(classForTargets[i]);
-									}
-								}
-							);
-						});
-					});
-				</script>
+		<div class="row" style="margin-top: 20px;">
+			<div class="span6">
+				<iframe
+					style="width: 100%; height: 600px; border: 1px solid #eee;"
+					src="//jsfiddle.net/jaromudr/fnz0L231/embedded/result/">
+				</iframe>
 			</div>
-			<div class="span6 code-span"></div>
-		</div>
-
-		<div class="row demo-row">
-			<div class="span6 demo-span">
-				<div id="DemoTargetB" class="demo-html">
-					<div class="area area-a">
-						<div class="target target-a">
-							dropzone A
-						</div>
-						<ul class="draggable-holder">
-							<li class="draggable draggable-a">
-								<i class=" icon-move"></i>
-								A<small>(origin)</small>
-							</li>
-							<li class="draggable draggable-b">
-								<i class=" icon-move"></i>
-								B<small>(clone)</small>
-							</li>
-							<li class="draggable draggable-b">
-								<i class=" icon-move"></i>
-								B<small>(clone)</small>
-							</li>
-							<li class="draggable draggable-b">
-								<i class=" icon-move"></i>
-								B<small>(clone)</small>
-							</li>
-							<li class="draggable draggable-b">
-								<i class=" icon-move"></i>
-								B<small>(clone)</small>
-							</li>
-							<li class="draggable draggable-c">
-								<i class=" icon-move"></i>
-								C<small>(origin)</small>
-							</li>
-							<li class="draggable draggable-d">
-								<i class=" icon-move"></i>
-								D<small>(origin)</small>
-							</li>
-							<li class="draggable draggable-e">
-								<i class=" icon-move"></i><br/>
-								E<small>(origin)</small>
-							</li>
-							<li class="draggable draggable-f">
-								<i class=" icon-move"></i><br/>
-								F<small>(origin)</small>
-							</li>
-							<li class="draggable draggable-h">
-								<i class=" icon-move"></i><br/>
-								H<small>(origin)</small>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<style>
-					#DemoTargetB{
-						padding: 2%;
-						border: 1px dashed #333;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-						overflow: hidden;
-					}
-
-					#DemoTargetB small{
-						color: #999999;
-						font-size: 11px;
-						line-height: 11px;
-					}
-
-					#DemoTargetB .area{
-						position: relative;
-						padding: 3%;
-						margin: 2%;
-						width: 88%;
-						border: 1px dashed #333;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-						float: left;
-					}
-
-					#DemoTargetB .area .target{
-						margin: 1%;
-						padding: 2%;
-						padding-top: 80px;
-						padding-bottom: 80px;
-						border: 1px dashed #333;
-						text-align: center;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-					}
-
-
-					#DemoTargetB ul.draggable-holder{
-						list-style: none;
-						clear: both;
-						margin: 4%;
-						border: 1px dashed #333;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-						float: left;
-					}
-
-					#DemoTargetB ul.draggable-holder .draggable{
-						width: 24%;
-						margin: 1% 4%;
-						padding: 9px 0;
-						font-size: 15px;
-						color: #333;
-						cursor: move;
-						text-align: center;
-						border: 1px solid #333;
-						border-radius: 5px;
-						background: #f5f5f5;
-						position: relative;
-						float: left;
-					}
-
-					#DemoTargetB ul.draggable-holder .draggable.active{
-						z-index: 2;
-						background: #ffc40d;
-					}
-
-					#DemoTargetB ul.draggable-holder .draggable.draggable-b + .draggable-b{
-						margin-left: -28%;
-					}
-
-					#DemoTargetB ul.draggable-holder .draggable.draggable-a{
-						width: 18%;
-					}
-					#DemoTargetB ul.draggable-holder .draggable.draggable-c{
-						width: 20%;
-					}
-					#DemoTargetB ul.draggable-holder .draggable.draggable-d{
-						width: 28%;
-					}
-					#DemoTargetB ul.draggable-holder .draggable.draggable-e{
-						width: 16%;
-					}
-					#DemoTargetB ul.draggable-holder .draggable.draggable-f{
-						width: 16%;
-						padding: 18px 0;
-					}
-
-					#DemoTargetB ul.draggable-holder .draggable.draggable-h{
-						width: 16%;
-						padding: 24px 0;
-					}
-
-					#DemoTargetB ul.draggable-holder .draggable.ontarget{
-						background: #ee5f5b;
-					}
-
-				</style>
-				<script>
-					window.addEventListener("load",function(){
-						var targetManger, draggables, targets,
-							root = document.getElementById("DemoTargetB"),
-							targetAreaElement = root.getElementsByClassName("area-a")[0],
-							targetElements = targetAreaElement.getElementsByClassName("target"),
-							draggableElements = targetAreaElement.getElementsByClassName("draggable");
-
-						draggables = Array.prototype.slice.call(draggableElements).map(function(element, i){
-							return new Dragee.Draggable(element, {
-								parent: targetAreaElement
-							});
-						});
-
-						targets = Array.prototype.slice.call(targetElements).map(function(element, i){
-							var target = new Dragee.Target(element, draggables, {
-								parent: targetAreaElement,
-								positioning: Dragee.positionFactory(Dragee.positionType.notCrossing)(function(){
-									return target.getRectangle();
-								}),
-								sorting: Dragee.sortingFactory(Dragee.positionType.notCrossing)(),
-								onAdd: function(draggable){
-									draggable.element.addClass("ontarget");
-								},
-								onRemove: function(draggable){
-									draggable.element.removeClass("ontarget");
-								}
-							});
-							return target;
-						});
-						targetManger = new Dragee.TargetManager(targetAreaElement, draggables, targets);
-					});
-				</script>
+			<div class="span6">
+				<iframe
+					style="width: 100%; height: 600px; border: 1px solid #eee;"
+					src="//jsfiddle.net/jaromudr/fnz0L231/embedded/html,js,css/">
+				</iframe>
 			</div>
-			<div class="span6 code-span"></div>
 		</div>
 	</section>
 
@@ -571,10 +136,10 @@
 				</p>
 				<h3>Defaults:</h3>
 				<pre class="prettyprint linenums">
-					timeEnd: 200,
-					timeExcange: 400,
-					radius: 30,
-					getLength: mathPoint.getLength()
+timeEnd: 200,
+timeExcange: 400,
+radius: 30,
+getLength: mathPoint.getLength()
 				</pre>
 			</div>
 			<div class="span6">
@@ -711,14 +276,14 @@
 			<div class="span6">
 				<h5>Defaults:</h5>
 				<pre class="prettyprint linenums">
-					angle: 0,
-					dAngle: 2 * Math.PI / elements.length,
-					center: areaRectangle.getCenter(),
-					startRadius: 50,
-					endRadius: mathPoint.createRectangleFromElement(area, area).getMinSide() / 2,
-					lineWidth: 2,
-					strokeStyle: "#ff5577",
-					fillStyle: "rgba(150,255,50,0.8)"
+angle: 0,
+dAngle: 2 * Math.PI / elements.length,
+center: areaRectangle.getCenter(),
+startRadius: 50,
+endRadius: mathPoint.createRectangleFromElement(area, area).getMinSide() / 2,
+lineWidth: 2,
+strokeStyle: "#ff5577",
+fillStyle: "rgba(150,255,50,0.8)"
 				</pre>
 			</div>
 		</div>
@@ -726,15 +291,15 @@
 		<div class="row demo-row">
 			<div class="span6 demo-span">
 				<div id="DemoSpider" class="demo-html">
-					<ul class="spider">
-						<li>A</li>
-						<li>B</li>
-						<li>C</li>
-						<li>D</li>
-						<li>E</li>
-						<li>F</li>
-						<li>H</li>
-					</ul>
+						<ul class="spider">
+							<li>A</li>
+							<li>B</li>
+							<li>C</li>
+							<li>D</li>
+							<li>E</li>
+							<li>F</li>
+							<li>H</li>
+						</ul>
 				</div>
 				<style>
 					#DemoSpider{
@@ -925,7 +490,7 @@
 		<p>
 			Designed by Vitaliy Yarovuy
 		</p>
-	</footer>
+		</footer>
 </div>
 
 <script id="codeViewTemplate" type="text/template">
@@ -970,6 +535,7 @@
 
 <!-- setup -->
 <script src="mustache.js"></script>
+<script src="https://cdn.rawgit.com/showdownjs/showdown/1.5.0/dist/showdown.min.js"></script>
 <script src="app.js"></script>
 
 </body>
