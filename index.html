@@ -82,9 +82,9 @@
 				<p>
 					<code>Dragee.Draggable(element[, options])</code>
 				</p>
-				<h3>Options</h3>
+				<h3>Options:</h3>
 				<p>
-					<code>parent</code> - HTMLElement, що визначає декартову систему координат, в якій буде переміщатися <code>Dragee.Draggable</code>. Його верхній лівий кут приймається за початок координат.<br/><br/>
+					<code>parent</code> - HTMLElement, що визначає декартову систему координат. Його верхній лівий кут приймається за початок координат.<br/><br/>
 
 					За замовчуванням береться перший не статичний батьківський HTMLElement.<br/><br/>
 
@@ -100,12 +100,12 @@
 				</p>
 			</div>
 			<div class="span6">
-				<h3>Значення по замовчуванню:</h3>
+				<h3>Defaults:</h3>
 				<pre class="prettyprint linenums">
-parent: parent = Dragee.util.getDafaultParent(element),
-bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent),
+					parent: Dragee.util.getDafaultParent(element),
+					bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent)
 				</pre>
-				<h3>Methods</h3>
+				<h3>Methods:</h3>
 				<p>
 					<code>getSize()</code><br/>
 					<code>getCenter()</code><br/>
@@ -113,7 +113,7 @@ bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent),
 					<code>move(point, time, isFix, isSilent)</code><br/>
 					<code>setPosition(point)</code>
 				</p>
-				<h3>Properties</h3>
+				<h3>Properties:</h3>
 				<p>
 					<code>enable = [true|false]</code><br/>
 				</p>
@@ -143,7 +143,6 @@ bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent),
 					</div>
 				</div>
 				<style>
-
 					#DemoDraggable .area{
 						position: relative;
 						overflow: hidden;
@@ -192,17 +191,16 @@ bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent),
 					#DemoDraggable .area .draggable.draggable-c.active{
 						background-color: #ffc40d;
 					}
-
 				</style>
 				<script>
-          window.addEventListener("load", function(){
-            var root = document.getElementById("DemoDraggable");
+					window.addEventListener("load", function(){
+						var root = document.getElementById("DemoDraggable");
 
-            root.querySelectorAll(".draggable").forEach(function(draggableElement){
-              new Dragee.Draggable(draggableElement)
-            })
-          });
-        </script>
+						root.querySelectorAll(".draggable").forEach(function(draggableElement){
+							new Dragee.Draggable(draggableElement)
+						})
+					});
+				</script>
 			</div>
 			<div class="span6 code-span"></div>
 		</div>
@@ -212,84 +210,72 @@ bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent),
 		<div class="page-header">
 			<h1>Dragee.Target</h1>
 		</div>
-		<h3>Dragee.Target</h3>
 		<div class="row">
 			<div class="span6">
 				<p>
-					"Кошик" в який можна додати <code>Dragee.Draggable</code> та сортувати їх. Самостійне використанняне не передбачене, використовується спільно з <code>Dragee.TargetManager</code>.
-				</p>
-				<p>
-					<code>Target(element, draggables[, options])</code> Конструктор включає 3 параметра :<br/>
-					<code>element</code> - HTMLElement "кошика" який визначає розміри та позицію <br/>
+					<code>Target(element, draggables[, options])</code><br/>
 				</p>
 				<h3>Options:</h3>
 				<p>
 					<code>timeEnd</code> - час переміщення <code>Dragee.Draggable</code> в цільову точку.<br/>
 					<code>timeExcange</code> - час за який <code>Dragee.Draggables</code> обмінюються своїми позиціями.<br/>
-					<code>parent</code> - HTMLElement який визначає декартову систему координат що буде використовуватися<br/>
-					<code>sorting</code> - функція яка визначає, яким чином мають впорядковуватися блоки в "кошику".<br/>
-					B модулі <code>position.js</code> ви можете знайти декілька корисних функцій(<code>sortingFactory(type)</code>)<br/>
-					<code>positioning</code> - функція яка визначає, яким чином мають розташовуватися блоки в "кошику".<br/>
-					В модулі <code>position.js</code> ви можете знайти декілька корисних функцій(<code>positionFactory(type)</code>)<br/><br/>
-
-					Callbacks: 
-					<code>onAdd</code> - функція, яка викликається при додаванні блоку в "кошик".
-					<code>onRemove</code> - функція, яка викликається при видаленні блоку з "кошика".
+					<code>parent</code> - HTMLElement, який визначає декартову систему координат<br/>
+					<code>sorting</code> - функція що визначає, яким чином будуть впорядковуватися <code>Dragee.Draggables</code> всередині <code>Dragee.Target</code>.<br/>
+					<code>positioning</code> - функція що визначає, яким чином будуть розміщуватись <code>Dragee.Draggables</code> всередині <code>Dragee.Target</code>.<br/>                   
+				</p>
+				<h3>Callbacks:</h3>
+				<p>
+					<code>onAdd</code>, <code>onRemove</code>
 				</p>
 			</div>
 			<div class="span6">
 				<h3>Defaults:</h3>
 				<pre class="prettyprint linenums">
-timeEnd: 200,
-timeExcange: 400,
-parent: parent,
-sorting: Dragee.sortingFactory(Dragee.positionType.floatLeft)(80, mathPoint.getLength({x: 1, y:4, IsTransformationSpace:true})),
-positioning: Dragee.positionFactory(Dragee.positionType.floatLeft)(Dragee.util.bind(this.getRectangle,this), {isRemove: true})
+					timeEnd: 200,
+					timeExcange: 400,
+					parent: Dragee.util.getDefaultParent(element),
+					sorting: Dragee.sortingFactory(Dragee.positionType.floatLeft)(80, mathPoint.getLength({x: 1, y:4, IsTransformationSpace:true})),
+					positioning: Dragee.positionFactory(Dragee.positionType.floatLeft)(Dragee.util.bind(this.getRectangle, this), {isRemove: true})
 				</pre>
 				<h3>Methods:</h3>
 				<p>
-					<code>getSortedDraggables()</code> - метод який повертає впорядкований список <code>Dragee.Draggable</code><br/>
-					<code>reset()</code> - відновлення початкових позицій блоків(видалення з "кошика")<br/>
+					<code>getSortedDraggables()</code><br/>
+					<code>reset()</code> - всі елементи, що знаходяться в <code>Dragee.Target</code>, повертаються у вихідні положення<br/>
 				</p>
-
 			</div>
 		</div>
-		<h3>Dragee.TargetManager</h3>
+		<div class="page-header">
+			<h1>Dragee.TargetManager</h1>
+		</div>
 		<div class="row">
 			<div class="span6">
 				<p>
-					Менеджер роботи групи "кошиків".
-				</p>
-				<p>
 					<code>TargetManager(element, draggables, targets, options)</code><br/>
-					<code>element</code> - HTMLElement який визначає робочу область <br/>
-					<code>draggables</code> - масив <code>Dragee.Draggable</code>, з якими працює менеджер<br/>
-					<code>targets</code> -  масив <code>Dragee.Target</code>, з якими працює менеджер<br/>
 				</p>
-				<h5>Options:</h5>
+				<h3>Options:</h3>
 				<p>
-					<code>onChange</code> функція-слухач яка викликається при переміщення елемента (з "кошика" чи в "кошик").<br/>
-					<code>timeEnd</code> час переміщення <code>Dragee.Draggable</code> з однієї точки в іншу.<br/>
+					<code>timeEnd</code> - час переміщення Dragee.Draggable в цільову точку.<br/>
 				</p>
-				<h5>Defaults:</h5>
-				<pre class="prettyprint linenums">
-timeEnd: 400,
-				</pre>
-			</div>
-			<div class="span6">
-				<h3>Methods:</h3>
+				<h3>Callbacks:</h3>
 				<p>
-					<code>reset()</code> - відновлення початкових позицій елементів (видалення з "кошиків")<br/>
-				</p>
-				<h3>Properties:</h3>
+					<code>onChange</code> - спрацьовує при зміні вмісту <code>Dragee.Target</code>
 				<p>
-					<code>positions</code> - позиції елементів в "кошиках", зручно використовувати для збереження та відновлення стану<br/>
-				</p>
 				<h3>Factory:</h3>
 				<p>
 					<code>Dragee.targetManagerFactory(element, draggableElements, targetElements, options)</code>. 
 					<code>options = { draggable: {...}, target: {...}, manager: {...} }</code>
 				</p>
+			</div>
+			<div class="span6">
+				<h3>Defaults:</h3>
+				<pre class="prettyprint linenums">
+					timeEnd: 400
+				</pre>
+				<h3>Methods:</h3>
+				<p>
+					<code>reset()</code> - всі елементи, що знаходяться в <code>Dragee.Targets</code>, повертаються у вихідні положення<br/>
+				</p>
+				
 			</div>
 		</div>
 		<h2>Demo:</h2>
@@ -456,29 +442,29 @@ timeEnd: 400,
 							draggableElements = targetAreaElement.getElementsByClassName("draggable"),
 							classForTargets=["green", "red", "blue"];
 
-							draggables = Array.prototype.slice.call(draggableElements).map(
-								function(element, i){
-									return new Dragee.Draggable(element, {
-										parent: targetAreaElement
-									});
+						draggables = Array.prototype.slice.call(draggableElements).map(
+							function(element, i){
+								return new Dragee.Draggable(element, {
+									parent: targetAreaElement
+								});
+							}
+						);
+
+						targets = Array.prototype.slice.call(targetElements).map(
+							function(element, i){
+								return new Dragee.Target(element, draggables,{
+									parent:targetAreaElement,
+									onAdd:function(draggable){
+										draggable.element.addClass(classForTargets[i]);
+									},
+									onRemove:function(draggable){
+										draggable.element.removeClass(classForTargets[i]);
+									}
 								}
 							);
+						});
 
-							targets = Array.prototype.slice.call(targetElements).map(
-								function(element, i){
-									return new Dragee.Target(element, draggables,{
-										parent:targetAreaElement,
-										onAdd:function(draggable){
-											draggable.element.addClass(classForTargets[i]);
-										},
-										onRemove:function(draggable){
-											draggable.element.removeClass(classForTargets[i]);
-										}
-									}
-								);
-							});
-
-							targetManger = new Dragee.TargetManager(targetAreaElement, draggables, targets);
+						targetManger = new Dragee.TargetManager(targetAreaElement, draggables, targets);
 					});
 				</script>
 			</div>
@@ -693,10 +679,10 @@ timeEnd: 400,
 				</p>
 				<h3>Defaults:</h3>
 				<pre class="prettyprint linenums">
-timeEnd: 200,
-timeExcange: 400,
-radius: 30,
-getLength: mathPoint.getLength()
+					timeEnd: 200,
+					timeExcange: 400,
+					radius: 30,
+					getLength: mathPoint.getLength()
 				</pre>
 			</div>
 			<div class="span6">
@@ -833,14 +819,14 @@ getLength: mathPoint.getLength()
 			<div class="span6">
 				<h5>Defaults:</h5>
 				<pre class="prettyprint linenums">
-angle: 0,
-dAngle: 2 * Math.PI / elements.length,
-center: areaRectangle.getCenter(),
-startRadius: 50,
-endRadius: mathPoint.createRectangleFromElement(area, area).getMinSide() / 2,
-lineWidth: 2,
-strokeStyle: "#ff5577",
-fillStyle: "rgba(150,255,50,0.8)"
+					angle: 0,
+					dAngle: 2 * Math.PI / elements.length,
+					center: areaRectangle.getCenter(),
+					startRadius: 50,
+					endRadius: mathPoint.createRectangleFromElement(area, area).getMinSide() / 2,
+					lineWidth: 2,
+					strokeStyle: "#ff5577",
+					fillStyle: "rgba(150,255,50,0.8)"
 				</pre>
 			</div>
 		</div>
@@ -848,15 +834,15 @@ fillStyle: "rgba(150,255,50,0.8)"
 		<div class="row demo-row">
 			<div class="span6 demo-span">
 				<div id="DemoSpider" class="demo-html">
-						<ul class="spider">
-							<li>A</li>
-							<li>B</li>
-							<li>C</li>
-							<li>D</li>
-							<li>E</li>
-							<li>F</li>
-							<li>H</li>
-						</ul>
+					<ul class="spider">
+						<li>A</li>
+						<li>B</li>
+						<li>C</li>
+						<li>D</li>
+						<li>E</li>
+						<li>F</li>
+						<li>H</li>
+					</ul>
 				</div>
 				<style>
 					#DemoSpider{
@@ -1047,7 +1033,7 @@ fillStyle: "rgba(150,255,50,0.8)"
 		<p>
 			Designed by Vitaliy Yarovuy
 		</p>
-    </footer>
+	</footer>
 </div>
 
 <script id="codeViewTemplate" type="text/template">

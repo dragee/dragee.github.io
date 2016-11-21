@@ -27,7 +27,7 @@
 
 
 (function (global, $, undefined) {
-		var $win = $(window),
+	var $win = $(window),
 		$demoRows = $('.demo-row'),
 		template = $("#codeViewTemplate")[0].innerHTML,
 		removeTab = function(text){
@@ -37,6 +37,11 @@
 			}
 			return text.replace(new RegExp("^\\t{"+dTabCount+"}","gmi"),"").replace(/\t/gmi,"  ");
 		};
+
+	$(".prettyprint").each(function(i, pre){
+		var text = $(pre).html();
+		$(pre).html(removeTab(text));
+	});
 
 	$demoRows.each(function(i,row){
 		var $row = $(row),
