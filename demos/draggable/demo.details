@@ -5,5 +5,5 @@
    - Vitaliy Yaroviy
    - Volodymyr Myskov
  resources:
-   - https://raw.githubusercontent.com/dragee/dragee/master/build/dragee.js
+   - https://rawgit.com/dragee/dragee/master/build/dragee.js
  normalize_css: no
