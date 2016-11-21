@@ -1,29 +1,28 @@
 var targetManger, draggables, targets,
-  root = document.getElementById("DemoTargetB"),
+  root = document.getElementById("DemoTargetA"),
   targetAreaElement = root.getElementsByClassName("area-a")[0],
   targetElements = targetAreaElement.getElementsByClassName("target"),
-  draggableElements = targetAreaElement.getElementsByClassName("draggable");
+  draggableElements = targetAreaElement.getElementsByClassName("draggable"),
+  classForTargets=["green", "red", "blue"];
 
-draggables = Array.prototype.slice.call(draggableElements).map(function(element, i){
-  return new Dragee.Draggable(element, {
-    parent: targetAreaElement
-  });
-});
+draggables = Array.prototype.slice.call(draggableElements).map(
+  function(element, i){
+    return new Dragee.Draggable(element, {
+      parent: targetAreaElement
+    });
+  }
+);
 
-targets = Array.prototype.slice.call(targetElements).map(function(element, i){
-  var target = new Dragee.Target(element, draggables, {
-    parent: targetAreaElement,
-    positioning: Dragee.positionFactory(Dragee.positionType.notCrossing)(function(){
-      return target.getRectangle();
-    }),
-    sorting: Dragee.sortingFactory(Dragee.positionType.notCrossing)(),
-    onAdd: function(draggable){
-      draggable.element.addClass("ontarget");
-    },
-    onRemove: function(draggable){
-      draggable.element.removeClass("ontarget");
+targets = Array.prototype.slice.call(targetElements).map(
+  function(element, i){
+    return new Dragee.Target(element, draggables,{
+      parent:targetAreaElement,
+      onAdd:function(draggable){
+        draggable.element.addClass(classForTargets[i]);
+      },
+      onRemove:function(draggable){
+        draggable.element.removeClass(classForTargets[i]);
+      }
     }
-  });
-  return target;
+  );
 });
-targetManger = new Dragee.TargetManager(targetAreaElement, draggables, targets);
