@@ -7,3 +7,4 @@
  resources:
    - https://rawgit.com/dragee/dragee/master/build/dragee.js
  normalize_css: no
+ js_wrap: b

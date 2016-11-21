@@ -1,7 +1,5 @@
-window.addEventListener("load", function(){
-  var root = document.getElementById("DemoDraggable");
+var root = document.getElementById("DemoDraggable");
 
-  root.querySelectorAll(".draggable").forEach(function(draggableElement){
-    new Dragee.Draggable(draggableElement)
-  })
+root.querySelectorAll(".draggable").forEach(function(draggableElement){
+  new Dragee.Draggable(draggableElement)
 });
