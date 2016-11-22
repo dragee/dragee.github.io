@@ -1,6 +1,8 @@
 # bound
 
-`bound(point, size)`
+```javascript
+bound(point, size)
+```
 
 `bound` is function that restrict movement of `Draggable`.    
 It got point and size of Draggable as arguments when dragging and return bounded point.
