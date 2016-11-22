@@ -22,7 +22,7 @@ Module `bound.js` describe few often used functions.
 
 ```javascript
 parent: Dragee.util.getDafaultParent(element),
-bound: Dragee.boundFactory(Dragee.boundType.element)(parent, parent)
+bound: Dragee.bound.toElement(parent, parent)
 ```
 
 ### Methods
