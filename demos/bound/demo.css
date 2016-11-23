@@ -1,0 +1,48 @@
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:1;
+}
+.draggable-area{
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border: 1px dashed #333;
+  border-radius: 6px;
+  background-color: rgba(225, 225, 225,0.4);
+}
+
+.draggable-area .draggable{
+  z-index: 2;
+  position: relative;
+  margin: 20px;
+  display: inline-block;
+  padding: 9px 14px;
+  font-size: 15px;
+  color: #333;
+  cursor: move;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.draggable-area .draggable-a,
+.draggable-area .draggable-b {
+  border-radius: 30px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  background: green;
+  border: 1px solid yellow;
+}
+
+.draggable-area .draggable-b {
+  background: red;
+}
+
+.draggable-area .draggable.active{
+  z-index: 2;
+}
