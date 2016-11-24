@@ -144,133 +144,21 @@
 	</section>
 
 	<section id="List">
-		<div class="page-header">
-			<h1>Dragee.List</h1>
-		</div>
+		<div class="md-docs" data-md="https://dragee.github.io/docs/target.md"></div>
+		
 		<div class="row">
 			<div class="span6">
-				<p>
-					<code>Dragee.List(draggables[, options])</code>
-				</p>
-				<h3>Options:</h3>
-				<p>
-					<code>timeEnd</code> - час переміщення <code>Dragee.Draggable</code> в кінцеву точку.<br/>
-					<code>timeExcange</code> - час за який <code>Dragee.Draggables</code> обмінюються своїми позиціями.<br/>
-					<code>getLength</code> - функція яка визначає яким чином буде визначатися відстань між 2 точками в декартовій системі координат(метрика простору), необхідна для визначення "влучення в ціль". Модуль <code>mathPoint</code> містить фабрику <code>getLength(options)</code> для побудови базових метрик.<br/>
-					<code>radius</code> - радіус при попаданні блока в який ми вважаємо, що він попав в ціль.<br/>
-
-					Callbacks: <code>onChange</code>
-				</p>
-				<h3>Defaults:</h3>
-				<pre class="prettyprint linenums">
-timeEnd: 200,
-timeExcange: 400,
-radius: 30,
-getLength: mathPoint.getLength()
-				</pre>
+				<iframe
+					style="width: 100%; height: 400px; border: 1px solid #eee;"
+					src="//jsfiddle.net/jaromudr/c99oueg5/embedded/result/">
+				</iframe>
 			</div>
 			<div class="span6">
-				<h3>Methods:</h3>
-				<p>
-					<code>getSortedDraggables()</code> - метод який повертає впорядкований список блоків<br/>
-				</p>
-				<h3>Properties:</h3>
-				<p>
-					<code>positions</code> - позиції блоків, зручно використовувати для збереження та відновлення стану<br/>
-				</p>
-				<h3>Factory:</h3>
-				<p>
-					Для спрощення ініціалізації списка існує фабика <code>Dragee.listFactory(parentElement, elements, options)</code>.<br/>
-					<code>options = { draggable : {...} , list : {...} }</code>
-				</p>
+				<iframe
+					style="width: 100%; height: 400px; border: 1px solid #eee;"
+					src="//jsfiddle.net/jaromudr/c99oueg5/embedded/js,html,css/">
+				</iframe>
 			</div>
-		</div>
-		<h2>Demo:</h2>
-		<div class="row demo-row">
-			<div class="span6 demo-span">
-				<div id="DemoList" class="demo-html">
-					<ul class="list list-a">
-						<li><i class=" icon-resize-vertical"></i> A</li>
-						<li><i class=" icon-resize-vertical"></i> B</li>
-						<li><i class=" icon-resize-vertical"></i> C</li>
-						<li><i class=" icon-resize-vertical"></i> D</li>
-						<li><i class=" icon-resize-vertical"></i> E</li>
-						<li><i class=" icon-resize-vertical"></i> F</li>
-					</ul>
-					<ul class="list list-b">
-						<li><i class=" icon-move"></i> 1</li>
-						<li><i class=" icon-move"></i> 2</li>
-						<li><i class=" icon-move"></i> 3</li>
-						<li><i class=" icon-move"></i> 4</li>
-						<li><i class=" icon-move"></i> 5</li>
-						<li><i class=" icon-move"></i> 6</li>
-						<li><i class=" icon-move"></i> 7</li>
-						<li><i class=" icon-move"></i> 8</li>
-						<li><i class=" icon-move"></i> 9</li>
-					</ul>
-				</div>
-				<style>
-					#DemoList{
-						padding: 2%;
-						border: 1px dashed #333;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-						overflow: hidden;
-					}
-
-					#DemoList ul.list{
-						position: relative;
-						margin-bottom: 30px;
-						padding: 5%;
-						margin: 2%;
-						border: 1px dashed #333;
-						border-radius: 6px;
-						background-color: rgba(225, 225, 225,0.4);
-						float: left;
-					}
-
-					#DemoList ul.list li{
-						list-style: none;
-						margin: 4px;
-						padding: 9px 14px;
-						font-size: 15px;
-						color: #333;
-						cursor: move;
-						border: 1px solid #333;
-						border-radius: 5px;
-						background: #f5f5f5;
-						position: relative;
-					}
-					#DemoList ul.list li.active{
-						z-index: 2;
-					}
-
-					#DemoList ul.list.list-a{
-						width: 26%;
-					}
-					#DemoList ul.list.list-b{
-						width: 44%;
-					}
-
-					#DemoList ul.list.list-b li{
-						display: inline-block;
-					}
-				</style>
-				<script>
-					window.addEventListener("load", function(){
-						var listA, listB,
-							root = document.getElementById("DemoList"),
-							listAParentElement = root.getElementsByClassName("list-a")[0],
-							listAElements = listAParentElement.getElementsByTagName("li"),
-							listBParentElement = root.getElementsByClassName("list-b")[0],
-							listBElements = listBParentElement.getElementsByTagName("li");
-
-						listA = new Dragee.listFactory(listAParentElement, listAElements);
-						listB = new Dragee.listFactory(listBParentElement, listBElements);
-					});
-				</script>
-			</div>
-			<div class="span6 code-span"></div>
 		</div>
 	</section>
 
