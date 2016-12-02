@@ -1,0 +1,10 @@
+---
+ name: Dragee.ArcSlider
+ description: Dragee.ArcSlider
+ authors:
+   - Vitaliy Yarovuy
+   - Volodymyr Myskov
+ resources:
+   - https://rawgit.com/dragee/dragee/master/build/dragee.js
+ normalize_css: no
+ js_wrap: b
