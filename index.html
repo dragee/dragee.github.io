@@ -145,7 +145,6 @@
 
 	<section id="List">
 		<div class="md-docs" data-md="https://dragee.github.io/docs/list.md"></div>
-		
 		<div class="row">
 			<div class="span6">
 				<iframe
@@ -163,45 +162,7 @@
 	</section>
 
 	<section id="Spider">
-		<div class="page-header">
-			<h1>Dragee.Spider</h1>
-		</div>
-		<div class="row">
-			<div class="span6">
-				<p>
-					"Сітка" - використовується для задання вектору вибору, вона складається з променів по яких рухаються повзунки.
-					Позиціонувати елементи не потрібно їх позиції задасть <code>Dragee.Spider</code> при ініціалізації.
-				</p>
-				<p>
-					<code>Spider(area, elements, options)</code><br/>
-					<code>area</code> - HTMLElement який визначає робочу область <br/>
-					<code>elements</code> - масив HTMLElement-ів, які будуть задавати вектори<br/>
-					<code>targets</code> -  масив <code>Dragee.Target</code>, з якими працює менеджер<br/>
-				</p>
-				<h3>Options:</h3>
-				<p>
-					<code>angle</code> початковий кут від якого будуть відкладатися кути інших "променів"<br/>
-					<code>dAngle</code> кут між 2 "променями"<br/>
-					<code>center</code> центр від якого відходять "промені" <br/>
-					<code>startRadius</code> нижнє обмеження повзунка <br/>
-					<code>endRadius</code> верхнє обмеження повзунка <br/>
-					<code>lineWidth, strokeStyle, fillStyle</code> стилізація "сітки" <br/>
-				</p>
-			</div>
-			<div class="span6">
-				<h5>Defaults:</h5>
-				<pre class="prettyprint linenums">
-angle: 0,
-dAngle: 2 * Math.PI / elements.length,
-center: areaRectangle.getCenter(),
-startRadius: 50,
-endRadius: mathPoint.createRectangleFromElement(area, area).getMinSide() / 2,
-lineWidth: 2,
-strokeStyle: "#ff5577",
-fillStyle: "rgba(150,255,50,0.8)"
-				</pre>
-			</div>
-		</div>
+		<div class="md-docs" data-md="https://dragee.github.io/docs/spider.md"></div>
 		<div class="row" style="margin-top: 20px;">
 			<div class="span6">
 				<iframe
