@@ -357,14 +357,14 @@
                 line = this.block.getOppositeVerticalLine(this.role),
                 startPoint = line.start,
                 endPoint = line.end,
-                boundedPosition = mathPoint.boundOnLine(startPoint, endPoint, position);
+                boundedPosition = Dragee.Geometry.boundOnLine(startPoint, endPoint, position);
 
-            return mathPoint.distance(position, boundedPosition);
+            return Dragee.Geometry.distance(position, boundedPosition);
         },
         calculateBlockPosition: function(){
             var corners = this.block.corners,
                 position = this.getPosition(),
-                boundedPosition = mathPoint.boundOnLine(corners.righttop.getPosition(), corners.rightbottom.getPosition(), position);
+                boundedPosition = Dragee.Geometry.boundOnLine(corners.righttop.getPosition(), corners.rightbottom.getPosition(), position);
 
             return corners.lefttop.calculatePositionRevertingAngle(position, this.block.getOppositeCorner(this.role).getPosition());
         },
@@ -398,17 +398,17 @@
                 cosBeta = Math.cos(beta),
                 sinBeta = Math.sin(beta),
                 point2 = new Point(point.x + someK * cosBeta, point.y + someK * sinBeta),
-                pointCrossing = mathPoint.directCrossing(start, end, point, point2),
-                newEnd = mathPoint.getPointInLineByLenght(end, start, size.x);
+                pointCrossing = Dragee.Geometry.directCrossing(start, end, point, point2),
+                newEnd = Dragee.Geometry.getPointInLineByLenght(end, start, size.x);
 
-            pointCrossing = mathPoint.boundOnLine(start, newEnd, pointCrossing);
+            pointCrossing = Dragee.Geometry.boundOnLine(start, newEnd, pointCrossing);
             return pointCrossing;
         },
         circleBound: function(point, size){
             var center = this.block.getCenter(),
                 startPoint = this.getPosition(),
                 radius = this.block.getRotateRadius(),
-                boundedPoint = mathPoint.getPointInLineByLenght(center, point, radius);
+                boundedPoint = Dragee.Geometry.getPointInLineByLenght(center, point, radius);
 
             return boundedPoint;
         },
