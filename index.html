@@ -58,7 +58,7 @@
 <div class="container">
 	<header class="jumbotron subhead" id="overview">
 		<h1>Dragee</h1>
-		<p class="lead">Dragee - drag&drop framework for desktop and mobile apps</p>
+		<p class="lead">Dragee - drag&drop for desktop and mobile apps</p>
 
 		<div class="subnav">
 			<ul class="nav nav-pills">
@@ -67,7 +67,7 @@
 				<li><a href="#Target">Target</a></li>
 				<li><a href="#List">List</a></li>
 				<li><a href="#Spider">Spider</a></li>
-				<li><a href="#MathPoint">mathPoint</a></li>
+				<li><a href="#Geometry">Geometry</a></li>
 				<li><a href="#position">position</a></li>
 			</ul>
 		</div>
@@ -179,73 +179,8 @@
 		</div>
 	</section>
 
-	<section id="MathPoint">
-		<div class="page-header">
-			<h1>mathPoint</h1>
-		</div>
-		<div class="row">
-			<div class="span6">
-				<h3>Point</h3>
-				<p>
-					<code>Point(x, y)</code>
-				</p>
-				<h4>Methods:</h4>
-				<p>
-					<code>add(point)</code> - додати вектор<br/>
-					<code>sub(point)</code> - відняти вектор<br/>
-					<code>mult(k)</code> - помножити вектор на коефіціент<br/>
-					<code>negative()</code> - негативний вектор<br/>
-					<code>compare(point)</code> - порівнює точки<br/>
-					<code>clone()</code> - створення копії точки<br/>
-				</p>
-				<h3>Rectangle</h3>
-				<p>
-					<code>Rectangle(position, size)</code>
-				</p>
-				<h4>Methods:</h4>
-				<p>
-					<code>getP1()</code> - повертає ліву верхню вершину прямокутника<br/>
-					<code>getP2()</code> - повертає праву верхню вершину прямокутника<br/>
-					<code>getP3()</code> - повертає праву нижню вершину прямокутника<br/>
-					<code>getP4()</code> - повертає ліву нижню вершину прямокутника<br/>
-					<code>getCenter()</code> - повертає центр(полюс) фігури<br/>
-					<code>or(rect)</code> - повертає обеднаний прямокутник, який включає всі точки вхідних пррямокутників<br/>
-					<code>and(rect)</code> - повертає перетин прямокутників, прямокутник який включає всі точки які співпадають у вхідних пррямокутниках<br/>
-					<code>includePoint(point)</code> - перевірка чи включає прямокутник точку<br/>
-					<code>includeRectangle(rectangle)</code> - перевірка чи включа прямокутник інший прямокутник
-					<code>moveToBound(rect[, axis])</code> - переміщує вхідний прямокутник за межі заданого, якщо задана вісь <code> axis = ["y" | "x"]</code> то прямокутник переміститься вздовж неї <br/>
-					<code>getSquare()</code> - повертає площу прямокутника<br/>
-					<code>getMinSide()</code> - повертає розмір меншої сторони<br/>
-					<code>growth(size)</code> - збільшує  прямокутник відносно ценру<br/>
-				</p>
-			</div>
-			<div class="span6">
-				<h3>mathPoint</h3>
-				<h4>Methods:</h4>
-				<p>
-					<code>getAVG([point1, point2, point3, ...])</code> - повертає середнє арифметичне вхіднич точок<br/>
-					<code>getLength(options)</code> - фабрика побудови метрики (функції для визначення відстані між 2 точками),
-						<code>options={x, y, isTransformationSpace}</code> задання властивостей <code>x</code>, <code>y</code> додає вісі в метрику визначення відстаней,
-						якщо прапор <code>isTransformationSpace</code> заданий true, тоді відбувається трансформація простору, а коефіціенти <code>x,y</code> задають розтягнення стиснення координат,
-						опція трасформації необхідна для виділення пріоритетної вісі, яка є більш важливою при виявленні наближених точок.<br/>
-					<code>indexOfNearPoint(arr, val, radius, getLength)</code> - повертає індекс найближчої точки з масива <code>arr</code> до заданої <code>val</code>,
-						пошук точок обмежується радіусом <code>radius</code>, а спосіб визначення відстанні передається як функція <code>getLength</code>.<br/>
-					<code>bound(min, max, val)</code> - приводить число до входження в заданий інтервал<br/>
-					<code>boundPoint(min, max, val)</code> - приводить точку до входження в прямокутну область<br/>
-					<code>directCrossing(L1P1, L1P2, L2P1, L2P2)</code> - повертає точку пересічення 2 прямих<br/>
-					<code>boundOnLine(LP1, LP2, P)</code> - переносить задану точку  <code>P</code> на пряму <code>LP1, LP2</code> шляхом відкладання перпендикуляра на пряму <br/>
-					<code>getPointInLine(LP1, LP2, percent)</code> - знаходить точку на відрізку яка знаходиться на відстані <code>percent*(LP2-LP1)</code> від першої точки <br/>
-					<code>getPointInLineByLenght(LP1, LP2, lenght)</code> - знаходить точку на відрізку, яка знаходиться на відстані <code>lenght</code> від першої точки <br/>
-					<code>createRectangleFromElement(element, parent, isContentBoxSize, isConsiderTranslate)</code> - створює прямокутник на основі елемента,
-						центр декартової системи задає верхній лівий кут <code>parent</code>-а, isContentBoxSize - прапор який включає в розміри прямокутника padding та border,
-						isConsiderTranslate - прапор врахування css властивостей -webkit-translate  при знаходженні позиції<br/>
-					<code>getSizeOfElement(element, isContentBoxSize)</code><br/>
-					<code>getOffset(element, parent, isConsiderTranslate)</code> - знаходить позицію елемента <br/>
-					<code>getPointFromRadialSystem(angle, length, center)</code> - переводить в декартову ситсему, точку заданою полярною системою <br/>
-					<code>addPointToBoundPoints(boundpoints, point, isRight)</code><br/>
-				</p>
-			</div>
-		</div>
+	<section id="Geometry">
+		<div class="md-docs" data-md="https://dragee.github.io/docs/geometry.md"></div>
 	</section>
 
 	<section id="position">
