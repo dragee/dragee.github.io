@@ -41,7 +41,7 @@ Rectangle(position, size)
 `getXDifference(p1, p2)`    
 `getYDifference(p1, p2)`    
 `transformedSpaceDistanceFactory(options)` - factory that return function that help to measure distance between two points in flattened space. options.x and options.y define coefficient of space flattening    
-`indexOfNearPoint(arr, val, radius, getDistance)` - search nearest point in array. Search bounded by radius. Distance calculated using getDistance function
+`indexOfNearPoint(arr, val, radius, getDistance)` - search nearest point in array. Search bounded by radius. Distance calculated using getDistance function    
 `bound(min, max, val)`    
 `boundPoint(min, max, val)`    
 `directCrossing(L1P1, L1P2, L2P1, L2P2)` - return intersection of two lines    
