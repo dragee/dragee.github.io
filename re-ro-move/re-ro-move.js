@@ -357,14 +357,14 @@
                 line = this.block.getOppositeVerticalLine(this.role),
                 startPoint = line.start,
                 endPoint = line.end,
-                boundedPosition = Dragee.Geometry.boundOnLine(startPoint, endPoint, position);
+                boundedPosition = Dragee.Geometry.boundToLine(startPoint, endPoint, position);
 
             return Dragee.Geometry.distance(position, boundedPosition);
         },
         calculateBlockPosition: function(){
             var corners = this.block.corners,
                 position = this.getPosition(),
-                boundedPosition = Dragee.Geometry.boundOnLine(corners.righttop.getPosition(), corners.rightbottom.getPosition(), position);
+                boundedPosition = Dragee.Geometry.boundToLine(corners.righttop.getPosition(), corners.rightbottom.getPosition(), position);
 
             return corners.lefttop.calculatePositionRevertingAngle(position, this.block.getOppositeCorner(this.role).getPosition());
         },
@@ -401,7 +401,7 @@
                 pointCrossing = Dragee.Geometry.directCrossing(start, end, point, point2),
                 newEnd = Dragee.Geometry.getPointInLineByLenght(end, start, size.x);
 
-            pointCrossing = Dragee.Geometry.boundOnLine(start, newEnd, pointCrossing);
+            pointCrossing = Dragee.Geometry.boundToLine(start, newEnd, pointCrossing);
             return pointCrossing;
         },
         circleBound: function(point, size){
