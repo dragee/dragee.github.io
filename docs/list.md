@@ -8,7 +8,7 @@ Dragee.List(draggables[, options])
 
 timeEnd - time to move `Dragee.Draggable` to endpoint.    
 timeExcange - time to exchange `Dragee.Draggables`.    
-getDistance|getLength - function that determines distance between two `Draggable`. It take two arguments - p1 and p2.    
+getDistance - function that determines distance between two `Draggable`. It take two arguments - p1 and p2.    
 radius - radius that determine if we can excange two `Draggable`.    
 
 After user drop `Draggable` we found nearest `Draggable` from list and if distance between them is less than radius, we excange their positions.
@@ -22,7 +22,7 @@ After user drop `Draggable` we found nearest `Draggable` from list and if distan
 timeEnd: 200,
 timeExcange: 400,
 radius: 30,
-getDistance: mathPoint.factories.getDistanceFunction()
+getDistance: mathPoint.getDistance
 ```
         
 ### Methods:
