@@ -290,7 +290,7 @@
                     (newPosition.x + oppositePosition.x)/2,
                     (newPosition.y + oppositePosition.y)/2
                 ),
-                radius = mathPoint.distance(newPosition, centerPoint);
+                radius = Dragee.Geometry.distance(newPosition, centerPoint);
 
             return new Point(
                 centerPoint.x + Math.cos(angle*(Math.PI/180)) * radius,
