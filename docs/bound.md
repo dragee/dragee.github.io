@@ -16,7 +16,7 @@ new Draggable(element, { bound: noBound })
 
 ### Factories:
 
-You can use one of existing bound factories or create your own `bound` function
+You can use one of existing bound functions or create your own
 
 ```javascript
 Dragee.bound.toElement(element, parent)
