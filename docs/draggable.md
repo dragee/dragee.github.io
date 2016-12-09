@@ -11,7 +11,7 @@ By default we take first not static parent HTMLElement.
 
 `bound` is function that restrict movement of `Draggable`.
 
-`position` - default coordinate. If it is not set we automatically calculate position inside parent.  
+`position` - default coordinate. If it is not set we automatically calculate position inside `parent`.  
 
 ### Callbacks:
 
