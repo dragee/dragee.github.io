@@ -5,6 +5,6 @@
    - Vitaliy Yarovuy
    - Volodymyr Myskov
  resources:
-   - https://rawgit.com/dragee/dragee/master/build/dragee.js
+   - https://cdn.jsdelivr.net/gh/dragee/dragee/build/dragee.js
  normalize_css: no
  js_wrap: b
