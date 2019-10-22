@@ -64,14 +64,14 @@
     var markdown = new showdown.Converter();
 
     $("[data-md]").each(function(i, mdElement){
-        $.ajax({ url: $(mdElement).data('md'), 
-            type: 'get', 
+        $.ajax({ url: $(mdElement).data('md'),
+            type: 'get',
             dataType: 'html',
             async: false,
             success: function(data) {
                 $(mdElement).html(markdown.makeHtml(data));
                 $(".language-javascript", mdElement).parent("pre").addClass("prettyprint linenums");
-            } 
+            }
         });
     });
 

@@ -6,12 +6,12 @@ Dragee.Spider(areaElement, draggableElements[, options])
 
 ### Options:
 
-`angle` - angle where will first ray built    
-`dAngle` - angle between two rays    
-`center` - center of spider web    
-`startRadius` - lower bound of slider    
-`endRadius` - upper bound of slider    
-`lineWidth`, `strokeStyle`, `fillStyle`    
+`angle` - angle where will first ray built
+`dAngle` - angle between two rays
+`center` - center of spider web
+`startRadius` - lower bound of slider
+`endRadius` - upper bound of slider
+`lineWidth`, `strokeStyle`, `fillStyle`
 
 
 ### Defaults:

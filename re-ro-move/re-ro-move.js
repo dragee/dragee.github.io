@@ -80,7 +80,6 @@
                     that.rotate(that.startRotation + rotation);
                 }
             });
-
         });
 
         this.element.addEventListener('gestureend', function(e) {
@@ -155,7 +154,7 @@
         },
         moveCorners: function(skipCorner){
             for(var ci in this.corners){
-                if(ci==skipCorner) continue;
+                if(ci == skipCorner) continue;
                 var corner = this.corners[ci];
                 corner.copyPositionFromBlock();
             }
