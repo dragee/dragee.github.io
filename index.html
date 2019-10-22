@@ -63,12 +63,10 @@
 		<div class="subnav">
 			<ul class="nav nav-pills">
 				<li><a href="#Draggable">Draggable</a></li>
-				<li><a href="#bound">bound</a></li>
+				<li><a href="#bounding">Bounding</a></li>
 				<li><a href="#Target">Target</a></li>
 				<li><a href="#List">List</a></li>
 				<li><a href="#Spider">Spider</a></li>
-				<li><a href="#Geometry">Geometry</a></li>
-				<li><a href="#position">position</a></li>
 			</ul>
 		</div>
 	</header>
@@ -92,8 +90,8 @@
 		</div>
 	</section>
 
-	<section id="bound">
-		<div class="md-docs" data-md="https://dragee.github.io/docs/bound.md"></div>
+	<section id="bounding">
+		<div class="md-docs" data-md="https://dragee.github.io/docs/bounding.md"></div>
 		<div class="row">
 			<div class="span6">
 				<iframe
@@ -175,41 +173,6 @@
 					style="width: 100%; height: 560px; border: 1px solid #eee;"
 					src="https://jsfiddle.net/jaromudr/5yd74xzs/embedded/js,html,css/">
 				</iframe>
-			</div>
-		</div>
-	</section>
-
-	<section id="Geometry">
-		<div class="md-docs" data-md="https://dragee.github.io/docs/geometry.md"></div>
-	</section>
-
-	<section id="position">
-		<div class="page-header">
-			<h1>position</h1>
-		</div>
-		<div class="row">
-			<div class="span6">
-			<p>
-				Модуль складається з 2 фабрик.<br><br> 
-
-				<code>Dragee.sortingFactory</code> дозволяє створити функцію, що буде сортувати блоки.<br> <br> 
-
-				<code>Dragee.positionFactory</code> дозволяє створити функцію, що буде контролювати розміщення блоків.<br> <br> 
-				Поведінка залежить від обраної стратегії.
-			</p>
-			<p>
-				<code>Dragee.positionType.notCrossing</code>
-				<pre class="prettyprint linenums">Dragee.sortingFactory(Dragee.positionType.notCrossing)()</pre>
-				<pre class="prettyprint linenums">Dragee.positionFactory(Dragee.positionType.notCrossing)(rectangle, options)</pre>
-				при позиціонуванні з данною стратегією блоки зміщуються таким чином щоб уникнути перетинання <br><br>
-
-				<code>Dragee.positionType.floatLeft</code>
-				<pre class="prettyprint linenums">Dragee.sortingFactory(Dragee.positionType.floatLeft)(radius, getLength, options)</pre>
-
-				<code>Dragee.positionType.floatRight</code>
-				<pre class="prettyprint linenums">Dragee.sortingFactory(Dragee.positionType.floatRight)(radius, getLength, options)</pre>
-
-			</p>
 			</div>
 		</div>
 	</section>

@@ -11,10 +11,7 @@ timeExcange - time to exchange `Dragee.Draggables`.
 getDistance - function that determines distance between two `Draggable`. It take two arguments - p1 and p2.
 radius - radius that determine if we can excange two `Draggable`.
 
-After user drop `Draggable` we found nearest `Draggable` from list and if distance between them is less than radius, we excange their positions.
-
-### Callbacks:
-`onChange`
+During dragging we search nearest `Draggable` from list and if distance between them is less than radius, we excange their positions.
 
 ### Defaults:
 
@@ -22,17 +19,5 @@ After user drop `Draggable` we found nearest `Draggable` from list and if distan
 timeEnd: 200,
 timeExcange: 400,
 radius: 30,
-getDistance: mathPoint.getDistance
-```
-
-### Methods:
-`getSortedDraggables()`
-
-### Properties:
-positions - position of `Draggables`. We use it to store and restore states of list.
-
-### Factory:
-```javascript
-Dragee.listFactory(parentElement, elements, options)
-options = { draggable : {...} , list : {...} }
-```
+getDistance: Dragee.getDistance
+``
