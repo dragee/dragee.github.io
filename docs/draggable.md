@@ -1,7 +1,8 @@
-# Dragee.Draggable
+# Draggable
 
 ```javascript
-Dragee.Draggable(element[, options])
+import 'Draggable' from 'dragee'
+Draggable(element[, options])
 ```
 
 ## Options

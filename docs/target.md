@@ -1,13 +1,14 @@
-# Dragee.Target
+# Target
 
 ```javascript
+import 'Target' from 'dragee'
 Target(element, draggables[, options])
 ```
 
 ### Options:
 
-`timeEnd` - time to move `Dragee.Draggable` to endpoint.
-`timeExcange` - time to exchange `Dragee.Draggables`.
+`timeEnd` - time to move `Draggable` to endpoint.
+`timeExcange` - time to exchange `Draggables`.
 `parent` - HTMLElement that define Cartesian coordinates system.
 `strategy` - class of `Strategy` thad describe positioning and sorting `Draggables` inside target
 
