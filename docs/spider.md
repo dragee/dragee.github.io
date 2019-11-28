@@ -1,7 +1,8 @@
-# Dragee.Spider
+# Spider
 
 ```javascript
-Dragee.Spider(areaElement, draggableElements[, options])
+import 'Spider' from 'dragee-widgets'
+new Spider(areaElement, draggableElements[, options])
 ```
 
 ### Options:

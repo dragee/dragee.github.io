@@ -9,6 +9,7 @@ Dragee.Draggable(element[, options])
 ### handler
 
 ```javascript
+import 'Draggable' from 'dragee'
 new Draggable(element, {
     handler: '.icon-move'
 })
