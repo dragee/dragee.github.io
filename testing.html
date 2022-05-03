@@ -104,7 +104,7 @@
                 <script>
                     window.addEventListener("load", function(){
                         const root = document.getElementById("DemoDraggable");
-                        root.querySelectorAll(".draggable").forEach(function(draggableElement) {
+                        Array.prototype.slice.call(root.querySelectorAll(".draggable")).forEach(function(draggableElement) {
                             new Dragee.Draggable(draggableElement, {
                               shouldRemoveZeroTranslate: true
                             })
@@ -711,6 +711,7 @@
 <script src="bootstrap/js/bootstrap-typeahead.js"></script>
 
 <!-- Dragee -->
+<script src="./dist/ie11-polyfill.js"></script>
 <script src="./dist/index.dev.js"></script>
 
 </body>
