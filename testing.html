@@ -104,7 +104,7 @@
                 <script>
                     window.addEventListener("load", function(){
                         const root = document.getElementById("DemoDraggable");
-                        root.querySelectorAll(".draggable").forEach((draggableElement) => {
+                        root.querySelectorAll(".draggable").forEach(function(draggableElement) {
                             new Dragee.Draggable(draggableElement, {
                               shouldRemoveZeroTranslate: true
                             })
@@ -494,23 +494,23 @@
 
                         // List C Example
 
-                        const initListItem = (listItem) => {
+                        const initListItem = function(listItem) {
                           const removeButton = listItem.querySelector('.remove')
 
-                          listItem.addEventListener('click', (event) => {
+                          listItem.addEventListener('click', function(event) {
                             if(!listItem.classList.contains('dragee-active')) {
                               listItem.classList.toggle('expanded')
                             }
                           })
 
-                          removeButton.addEventListener('click', (event) => {
-                            draggable = listC.draggables.find((d) => d.element == listItem)
+                          removeButton.addEventListener('click', function(event) {
+                            draggable = listC.draggables.find(function(d) { return d.element == listItem })
                             listCParentElement.removeChild(listItem)
                             listC.remove(draggable)
                           })
                         }
 
-                        [...listCElements].forEach((listItem) => initListItem(listItem))
+                        Array.prototype.slice.call(listCElements).forEach(function(listItem) { initListItem(listItem)})
 
                         listC = Dragee.BubblingList.factory(listCParentElement, listCElements, {
                             draggable: {
@@ -525,13 +525,10 @@
                         const addButton = document.querySelector(".list-c-add-tem")
                         let itemCount = 5
 
-                        addButton.addEventListener('click', (event) => {
+                        addButton.addEventListener('click', function(event) {
                           listItem = document.createElement('li')
                           listItem.classList.add('list-item')
-                          listItem.innerHTML = `<div>
-                            <span class="expand">Expand</span> ⇔ ${itemCount++} <span class="remove">x</span>
-                          </div>
-                          <div class="list-item-content" style="height: ${itemCount * 10}px;">`
+                          listItem.innerHTML = '<div><span class="expand">Expand</span> ⇔ N <span class="remove">x</span></div><div class="list-item-content" style="height: 120px;">'
                           listCParentElement.appendChild(listItem)
                           initListItem(listItem)
 
@@ -700,18 +697,18 @@
                               classForTargets = ["green", "red", "blue"];
                               strategies = [Dragee.FloatLeftStrategy, Dragee.FloatLeftStrategy, Dragee.FloatRightStrategy]
 
-                        draggables = [...draggableElements].map((element, i) => {
+                        draggables = Array.prototype.slice.call(draggableElements).map(function(element, i) {
                             return new Dragee.Draggable(element, {
                               container: targetAreaElement
                             })
                           }
                         )
 
-                        targets = [...targetElements].map((element, i) => {
+                        targets = Array.prototype.slice.call(targetElements).map(function(element, i) {
                             const target = new Dragee.Target(element, draggables, {
                               container: targetAreaElement,
                               strategy: new strategies[i](
-                                () => target.getRectangle(),
+                                function() { return target.getRectangle() },
                                 {
                                   radius: 80,
                                   getDistance: Dragee.transformedSpaceDistanceFactory({ x: 1, y: 4 }),
@@ -721,10 +718,10 @@
                                 }
                               ),
                               on: {
-                                'target:add': (draggable) => {
+                                'target:add': function(draggable) {
                                   draggable.element.classList.add(classForTargets[i]);
                                 },
-                                'target:remove': (draggable) => {
+                                'target:remove': function(draggable) {
                                   draggable.element.classList.remove(classForTargets[i]);
                                 }
                               }
@@ -938,7 +935,7 @@
 <script src="bootstrap/js/bootstrap-typeahead.js"></script>
 
 <!-- Dragee -->
-<script src="../dist/index.dev.js"></script>
+<script src="./dist/index.dev.js"></script>
 
 </body>
 </html>
