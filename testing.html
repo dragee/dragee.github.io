@@ -144,25 +144,25 @@
                           <div>
                             <span class="expand">Expand</span> ⇔ 1 <span class="remove">x</span>
                           </div>
-                          <div class="list-item-content" style="height: 30px;">
+                          <div class="list-item-content" style="height: 30px;"></div>
                         </li>
                         <li class="list-item">
                           <div>
                             <span class="expand">Expand</span> ⇔ 2 <span class="remove">x</span>
                           </div>
-                          <div class="list-item-content" style="height: 70px;">
+                          <div class="list-item-content" style="height: 70px;"></div>
                         </li>
                         <li class="list-item">
                           <div>
                             <span class="expand">Expand</span> ⇔ 3 <span class="remove">x</span>
                           </div>
-                          <div class="list-item-content" style="height: 50px;">
+                          <div class="list-item-content" style="height: 50px;"></div>
                         </li>
                         <li class="list-item">
                           <div>
                             <span class="expand">Expand</span> ⇔ 4 <span class="remove">x</span>
                           </div>
-                          <div class="list-item-content" style="height: 100px;">
+                          <div class="list-item-content" style="height: 100px;"></div>
                         </li>
                       </ul>
                       <button type="button" class="btn btn-primary list-c-add-tem">Add item</button>
@@ -286,7 +286,7 @@
                           })
                         }
 
-                        Array.prototype.slice.call(listCElements).forEach(function(listItem) { initListItem(listItem)})
+                        Array.prototype.slice.call(listCElements).forEach(function(listItem) { initListItem(listItem) });
 
                         listC = Dragee.BubblingList.factory(listCParentElement, listCElements, {
                             draggable: {
@@ -304,7 +304,7 @@
                         addButton.addEventListener('click', function(event) {
                           listItem = document.createElement('li')
                           listItem.classList.add('list-item')
-                          listItem.innerHTML = '<div><span class="expand">Expand</span> ⇔ N <span class="remove">x</span></div><div class="list-item-content" style="height: 120px;">'
+                          listItem.innerHTML = '<div><span class="expand">Expand</span> ⇔ N <span class="remove">x</span></div><div class="list-item-content" style="height: 120px;"></div>'
                           listCParentElement.appendChild(listItem)
                           initListItem(listItem)
 
