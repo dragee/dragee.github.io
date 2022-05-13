@@ -1,5 +1,5 @@
 # Bounding
-`bound` is function that restrict movements of `Draggable`
+`bound` is a function that restricts movements of `Draggable`
 
 
 ```javascript

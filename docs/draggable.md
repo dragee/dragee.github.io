@@ -17,23 +17,23 @@ new Draggable(element, {
 ```
 
 ### parent
-HTMLElement that define Cartesian coordinates system. It's upper left corner is taken as the origin. By default we calculate parent(container) automatically by finding first parent that have non `static` positioning
+HTMLElement that defines Cartesian coordinates system. Its upper left corner is taken as the origin. By default, we calculate the parent(container) automatically by finding the first parent that has no-`static` positioning
 
 
 ### bounding
-Bounding conception can help us to restrict `draggable` movements. We can set to move it insite rectangle, by circle, by line, etc.
-By default we will resctrict movements inside parent rectangle
+Bounding conception can help us to restrict `draggable` movements. We can restrict moving it inside a rectangle, by a circle, byline, etc.
+By default, we will restrict movements inside the parent rectangle.
 
 ### position
-Start positioning. By default we automatically calculate position inside `parent` element
+Start positioning. By default, we automatically calculate the position inside the `parent` element
 
 ### isContentBoxSize
-You can identify  that we should take into account element borders and paddings when we calculate draggable size
+You can identify  that we should take into account element borders and paddings when we calculate the draggable size
 
 ### nativeDragAndDrop
 There can be situations where we need to use html5 drag&drop instead of `dragee` realization.
 
-Example: `table>tr` have a lot of issues, so it's easier to fix them using html5 drag&drop realization or emulation
+Example: `table > tr` have a lot of issues, so it's easier to fix them using html5 drag&drop realization or emulation.
 
 ### emulateNativeDragAndDropOnTouch
 `true` by default. Emulate native drag&drop on touch devices

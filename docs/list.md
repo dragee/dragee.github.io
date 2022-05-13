@@ -1,6 +1,6 @@
 # List
 
-During dragging we search nearest `Draggable` from list and if distance between them is less than radius, we excange their positions
+During dragging, we search nearest `Draggable` from the list and if the distance between them is less than the radius, we exchange their positions
 
 ```javascript
 Dragee.List(draggables[, options])
@@ -10,17 +10,17 @@ Dragee.List(draggables[, options])
 
 ### getDistance
 
-Function that calculate distance from one draggable to other.
+The function that calculates a distance from one draggable to other.
 We already implemented `getDistance`, `getXDifference` and `getYDifference` functions.
-By default we use `getDistance` function.
+By default we use `getDistance` function.и
 
 
 ### sorting
 
-By default we sort by `y` value. If it's equal, then by `x`. But it's possible to customize this behaviour
+By default, we sort by `y` value. If it's equal, then by `x`. But it's possible to customize this behavior
 
 ### radius
-radius that determine if we can excange two `Draggable`.
+the radius that determines if we can exchange two `Draggable`.
 Default: 30px
 
 ### timeEnd
