@@ -74,17 +74,17 @@
             <div class="span6">
                 <p>
                     <code>email</code> jaromudr@gmail.com<br>
-                    <code>skype</code> val_de_moor
+                    <code>telegram</code> @jaromudr
                 </p>
             </div>
         </div>
         <div class="row demo-row">
             <div class="span6 demo-span">
 <div id="DemoReRoMove" class="demo-html">
-    <img src="images/cat.jpg" data-x="300" data-y="230" data-angle="350">    
+    <img src="images/cat.jpg" data-x="300" data-y="230" data-angle="350">
     <img src="images/bear.jpg" data-x="-30" data-y="250" data-angle="-350">
-    <img src="images/horse.jpg" data-x="-50" data-y="20" data-angle="-370"> 
-    <img src="images/wolf.jpg" data-x="300" data-y="20" data-angle="-20"> 
+    <img src="images/horse.jpg" data-x="-50" data-y="20" data-angle="-370">
+    <img src="images/wolf.jpg" data-x="300" data-y="20" data-angle="-20">
 </div>
                 <style>
 #DemoReRoMove {
@@ -94,7 +94,7 @@
 }
 
 #DemoReRoMove img{
-    
+
 }
 
 .re-ro-block {
@@ -134,17 +134,17 @@
     -moz-border-radius: 20px;
 }
                 </style>
-                <script>
-window.addEventListener("load", function(){
-    var root = document.getElementById("DemoReRoMove"),
-        images = [];
+<script>
+window.addEventListener("load", () => {
+    const root = document.getElementById("DemoReRoMove"),
+          images = []
 
-    [].forEach.call(root.querySelectorAll("img"), function(element){
-        var reRoMove = new ReRoMove(element, root, {
+    Array.from(root.querySelectorAll("img")).forEach((element) => {
+        const reRoMove = new ReRoMove(element, root, {
             scale: 1
-        });
+        })
 
-        images.push(reRoMove);
+        images.push(reRoMove)
 
         reRoMove.draggable.move(
             new Point(
@@ -155,20 +155,20 @@ window.addEventListener("load", function(){
 
         reRoMove.rotate(+element.getAttribute("data-angle"));
 
-        element.addEventListener("click", function(){
-            images.forEach(function(im){
-                im.deselect();
+        element.addEventListener("click", () => {
+            images.forEach((im) => {
+                im.deselect()
             });
 
-            reRoMove.select();
-        });
+            reRoMove.select()
+        })
 
-        setTimeout(function(){
-            reRoMove.draggable.setZeroTransition();
+        setTimeout(() => {
+            reRoMove.draggable.setZeroTransition()
         }, 3000)
-    });
-});
-                </script>
+    })
+})
+</script>
             </div>
             <div class="span6 code-span"></div>
         </div>
