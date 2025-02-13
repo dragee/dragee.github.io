@@ -41,7 +41,7 @@ If `nativeDragAndDrop` is set, we use the native browser HTML Drag and Drop API.
 
 One useful case is making `table > tr` sortable. The main issue is that it is not possible to set a z-index for `table > tr`, but using `nativeDragAndDrop` mode bypasses this problem.
 
-<img width="545" alt="Знімок екрана 2025-02-13 о 16 25 41" src="https://github.com/user-attachments/assets/b34f93c4-d68d-492d-b132-b0863795393b" />
+<img width="545" alt="dragging" src="images/dragging.png" />
 
 ### emulateNativeDragAndDropOnTouch
 
