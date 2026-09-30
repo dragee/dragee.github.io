@@ -9,7 +9,7 @@
   "dependencies": {
     "dragee": "^2.0.1",
     "dragee-widgets": "^0.3.0",
-    "favicons": "^7.2.0",
+    "favicons": "^7.3.1",
     "highlight.js": "^11.11.1",
     "vue": "^3.3.4",
     "vue-scrollactive": "^0.9.3"
