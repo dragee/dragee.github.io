@@ -1,3 +1,15 @@
-.DS_Store
+# Dependencies
+node_modules
+
+# Build (dist is temp, docs/ is committed for GitHub Pages)
+dist
+
+# Editor
 .idea
-node_modules/*
+.vscode
+
+# OS
+.DS_Store
+
+# Logs
+*.log
