@@ -1,6 +1,7 @@
 {
   "name": "vuejs-with-vite",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,13 +10,12 @@
   "dependencies": {
     "dragee": "^2.0.1",
     "dragee-widgets": "^0.3.0",
-    "favicons": "^7.2.0",
     "highlight.js": "^11.11.1",
     "vue": "^3.3.4",
     "vue-scrollactive": "^0.9.3"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.6.2",
-    "vite": "^4.5.1"
+    "@vitejs/plugin-vue": "^6.0.9",
+    "vite": "^8.3.2"
   }
 }
